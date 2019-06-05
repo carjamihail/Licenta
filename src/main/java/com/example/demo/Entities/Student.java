@@ -31,8 +31,7 @@ public class Student {
     private int anStudiu;
     //@NotNull
     @Column(name="Buget")
-    private boolean buget;
-    private LogIn logIn;
+    private boolean buget;;
     public void setId(Long id) {
         this.id = id;
     }
