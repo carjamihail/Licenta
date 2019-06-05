@@ -17,10 +17,7 @@ public class StudentController {
 
     @Autowired
     private StudentService studentService;
-    @GetMapping("/merge")
-    public String test(){
-        return"merge";
-    }
+
 
     @GetMapping("/students")
     public List<Student> getAll()

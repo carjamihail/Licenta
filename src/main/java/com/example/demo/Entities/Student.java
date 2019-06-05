@@ -32,7 +32,38 @@ public class Student {
     //@NotNull
     @Column(name="Buget")
     private boolean buget;
+    private LogIn logIn;
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    public void setNume(String nume) {
+        this.nume = nume;
+    }
+
+    public void setPrenume(String prenume) {
+        this.prenume = prenume;
+    }
+
+    public void setNumarMatricol(String numarMatricol) {
+        this.numarMatricol = numarMatricol;
+    }
+
+    public void setCnp(Long cnp) {
+        this.cnp = cnp;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setAnStudiu(int anStudiu) {
+        this.anStudiu = anStudiu;
+    }
+
+    public void setBuget(boolean buget) {
+        this.buget = buget;
+    }
 
     public Long getId() {
         return id;
@@ -65,4 +96,5 @@ public class Student {
     public boolean isBuget() {
         return buget;
     }
+
 }
