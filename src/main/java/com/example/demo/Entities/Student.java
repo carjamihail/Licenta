@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
+
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 @Table(name="Studenti")
@@ -20,6 +22,15 @@ public class Student {
     //@NotNull
     @Column(name="NumarMatricol")
     private String numarMatricol;
+
+    public List<Grades> getGrades() {
+        return grades;
+    }
+
+    public void setGrades(List<Grades> grades) {
+        this.grades = grades;
+    }
+
     //@NotNull
     @Column(name="CNP")
     private Long cnp;
@@ -31,7 +42,13 @@ public class Student {
     private int anStudiu;
     //@NotNull
     @Column(name="Buget")
-    private boolean buget;;
+    private boolean buget;
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL,mappedBy = "student")
+    private List<Grades> grades;
+
+
+
     public void setId(Long id) {
         this.id = id;
     }
